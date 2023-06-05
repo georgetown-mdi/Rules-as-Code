@@ -1,0 +1,1 @@
+data$GrossIncomeEligibility[data$stateFIPS==33 & data$kid_count ==0]<- data$FPL[data$stateFIPS==33 & data$kid_count ==0]*1.3

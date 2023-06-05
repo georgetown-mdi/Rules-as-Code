@@ -1,0 +1,2 @@
+data$ssi_recipients_count<-rowSums(cbind(data$value.ssiAdlt1, data$value.ssiAdlt2, data$value.ssiAdlt3, data$value.ssiAdlt4, data$value.ssiAdlt5, data$value.ssiAdlt6, data$value.ssiChild1, data$value.ssiChild2, data$value.ssiChild3, data$value.ssiChild4, data$value.ssiChild5, data$value.ssiChild6)>0, na.rm=TRUE)
+not_categ_elig_ssi<-data$ssi_recipients_count<data$famsize # if not everyone in the family receives SSI testing

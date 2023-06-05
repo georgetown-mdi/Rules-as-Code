@@ -1,0 +1,9 @@
+```catala
+scope PrelimComputation:
+  definition eligible of income equals
+    if income <= (1.3*(fed_level.rate/12.0)) then
+      true
+    else(
+      false
+    )
+```

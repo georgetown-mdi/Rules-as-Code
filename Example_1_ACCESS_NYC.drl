@@ -1,0 +1,10 @@
+rule "create the snap total income"
+  dialect "mvel"
+  when
+    IncomeHouseholdWageSelfEmploymentBoarderMonthly($earnedIncome : amount)
+    IncomeHouseholdUnearnedMonthly($unearnedIncome : amount)
+    ExpenseHouseholdChildSupportMonthly($childSupportExpense : amount)
+  then
+    Float $totalincome = $earnedIncome + $unearnedIncome - $childSupportExpense;
+    insertLogical(new SNAPTotalIncome($totalincome));
+end
